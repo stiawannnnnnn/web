@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Timeline | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/about.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Timeline Styling */
+        .acc-sec {
+            background: #000000;
+            color: white;
+            padding: 100px 5% 50px;
+            min-height: 100vh;
+        }
+
+        .acc-sec h1 {
+            font-size: 60px;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .acc-sec h1 span {
+            color: #0ef;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, #0ef, transparent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(0, 238, 255, 0.3);
+        }
+
+        .containerTline {
+            padding: 20px 50px;
+            position: relative;
+            width: 50%;
+            animation: movedown 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes movedown {
+            0% { transform: translateY(-30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .text-box {
+            background: #1a1d25;
+            padding: 25px;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .text-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 238, 255, 0.2);
+        }
+
+        .hed {
+            color: #0ef;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .text-box h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .text-box small {
+            display: block;
+            color: #0ef;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .text-box p {
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        .containerTline img {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            right: -25px;
+            top: 32px;
+            z-index: 10;
+            border: 2px solid #0ef;
+            background: #000;
+            padding: 5px;
+        }
+
+        .right-container img {
+            left: -25px;
+        }
+
+        /* Arrow Styling */
+        .left-container-arrow,
+        .right-container-arrow {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            z-index: 1;
+            border: 15px solid transparent;
+        }
+
+        .left-container-arrow {
+            border-left-color: #1a1d25;
+            right: -30px;
+        }
+
+        .right-container-arrow {
+            border-right-color: #1a1d25;
+            left: -30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline::after {
+                left: 30px;
+            }
+
+            .containerTline {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+
+            .containerTline img {
+                left: 10px;
+            }
+
+            .left-container-arrow,
+            .right-container-arrow {
+                border: 15px solid transparent;
+                left: -15px;
+                border-right-color: #1a1d25;
+            }
+
+            .acc-sec h1 {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .acc-sec h1 {
+                font-size: 36px;
+            }
+
+            .text-box h2 {
+                font-size: 20px;
+            }
+
+            .text-box p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .acc-sec h1 {
+                font-size: 32px;
+            }
+
+            .containerTline {
+                padding-left: 60px;
+            }
+
+            .containerTline img {
+                width: 40px;
+                height: 40px;
+                left: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1">Home</a> 
+            <a href="./about.html" style="--i:2">About</a>
+            <a href="./academic.html" style="--i:3" class="active">Academic</a>
+            <a href="./experiance.html" style="--i:4">Experience</a>
+            <a href="./skills.html" style="--i:5">Skills</a>
+            <a href="./projects.html" style="--i:6">Projects</a>
+            <a href="./gallery.html" style="--i:7">Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Academics Section -->
+    <section id="Accademics" class="acc-sec">
+        <h1>Academic <span>Journey</span></h1>
+        <div class="timeline-container">
+            <div class="timeline academics">
+                <!-- Timeline Items -->
+                <div class="containerTline left-container">
+                    <div class="text-box">
+                        <h2 class="hed">ELEMENTARY SCHOOL</h2>
+                        <h2>SDN 006 SIALANG KUBANG</h2>
+                        <small>2011 - 2017</small>
+                        <p>Membangun fondasi pendidikan dasar dengan fokus pada pengembangan keterampilan akademik dan sosial.</p>
+                        <span class="left-container-arrow"></span>
+                    </div>
+                </div>
+
+                <div class="containerTline right-container">
+                    <div class="text-box">
+                        <h2 class="hed">JUNIOR HIGH SCHOOL</h2>
+                        <h2>SMPN 1 Perhentian RAJA</h2>
+                        <small>2019 - 2020</small>
+                        <p>Selalama Masa SMP saya aktif Mengembangkan minat dalam teknologi melalui program ekstrakurikuler komputer dasar.</p>
+                        <span class="right-container-arrow"></span>
+                    </div>
+                </div>
+
+                <div class="containerTline left-container">
+                    <div class="text-box">
+                        <h2 class="hed">SENIOR HIGH SCHOOL</h2>
+                        <h2>SMKN 1 PERRHENTIAN RAJA</h2>
+                        <small>2020 - 2023</small>
+                        <p>Jurusan Teknik Komputer Jaringan dengan fokus pada jaringan komputer dan sistem operasi.</p>
+                        <span class="left-container-arrow"></span>
+                    </div>
+                </div>
+
+                <div class="containerTline right-container">
+                    <div class="text-box">
+                        <h2 class="hed">UNIVERSITY</h2>
+                        <h2>UIN Sultan Syarif Kasim Riau</h2>
+                        <small>2023 - Present</small>
+                        <p>Menempuh pendidikan Teknik Informatika dengan spesialisasi dalam pengembangan aplikasi mobile dan AI.</p>
+                        <span class="right-container-arrow"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.containerTline');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.animation = 'movedown 0.8s ease forwards';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                header.classList.toggle('scrolled', window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>

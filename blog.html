@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/about.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Blog Section Styling */
+        .blog-section {
+            background-color: #000000;
+            color: white;
+            padding: 100px 10% 50px;
+            min-height: 100vh;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .blog-container h2 {
+            font-size: 60px;
+            letter-spacing: 5px;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .blog-container h2 span {
+            color: #0ef;
+        }
+        
+        .blog-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #0ef;
+            border-radius: 3px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: #1a1d25;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .blog-card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 238, 255, 0.2);
+        }
+        
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #0ef;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0ef;
+            letter-spacing: 1px;
+        }
+        
+        .blog-content p {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .btn-box {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 15px;
+            color: #081b29;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-box:hover {
+            box-shadow: 0 0 10px #0ef;
+            transform: scale(1.05);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-section {
+                padding: 80px 5% 40px;
+            }
+            
+            .blog-container h2 {
+                font-size: 40px;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .blog-container h2 {
+                font-size: 32px;
+            }
+            
+            .blog-content h3 {
+                font-size: 20px;
+            }
+            
+            .blog-content p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1">Home</a> 
+            <a href="./about.html" style="--i:2" class="active">About</a>
+            <a href="./academic.html" style="--i:3">Academic</a>
+            <a href="./experiance.html" style="--i:4">Experience</a>
+            <a href="./skills.html" style="--i:5">Skills</a>
+            <a href="./projects.html" style="--i:6">Projects</a>
+            <a href="./gallery.html" style="--i:7" >Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+  <!-- Blog Section -->
+<section id="Blog" class="blog-section">
+    <div class="blog-container">
+        <h2>Blog <span>Posts</span></h2>
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <div class="blog-card reveal">
+                <div class="blog-content">
+                    <h3>Membuat Portfolio Modern dengan HTML & CSS</h3>
+                    <p>Pelajari cara membangun situs portfolio yang responsif dan menarik menggunakan HTML dan CSS. Panduan ini mencakup struktur dasar, styling, dan tips desain modern.</p>
+                    <a href="https://www.freecodecamp.org/news/build-a-simple-portfolio-website-with-html-and-css/" class="btn-box" target="_blank" rel="noopener noreferrer">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-card reveal">
+                <div class="blog-content">
+                    <h3>Perbandingan Alat Desain UI/UX: Figma, Adobe XD, dan Canva</h3>
+                    <p>Temukan perbedaan utama antara Figma, Adobe XD, dan Canva untuk membantu Anda memilih alat desain yang paling sesuai dengan kebutuhan proyek Anda.</p>
+                    <a href="https://www.transmedia.co.uk/article/adobe-xd-canva-and-figma-which-is-the-best-ui-ux-design-tool" class="btn-box" target="_blank" rel="noopener noreferrer">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-card reveal">
+                <div class="blog-content">
+                    <h3>33 Konsep JavaScript yang Harus Diketahui Setiap Developer</h3>
+                    <p>Dalami konsep-konsep penting dalam JavaScript seperti closure, hoisting, event loop, dan lainnya melalui panduan komprehensif ini.</p>
+                    <a href="https://github.com/leonardomso/33-js-concepts" class="btn-box" target="_blank" rel="noopener noreferrer">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="blog-card reveal">
+                <div class="blog-content">
+                    <h3>Membangun Karier Sukses di Bidang Teknologi pada 2025</h3>
+                    <p>Pelajari strategi untuk membangun jaringan profesional, meningkatkan keterampilan, dan memanfaatkan peluang dalam industri teknologi yang kompetitif.</p>
+                    <a href="https://www.businessinsider.com/landed-software-engineer-jobs-aws-walmart-doing-4-things-2025-5" class="btn-box" target="_blank" rel="noopener noreferrer">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 5 -->
+            <div class="blog-card reveal">
+                <div class="blog-content">
+                    <h3>Prinsip Desain UI/UX untuk Developer</h3>
+                    <p>Pelajari prinsip-prinsip dasar desain UI/UX seperti hierarki visual, konsistensi, dan aksesibilitas untuk meningkatkan pengalaman pengguna dalam aplikasi Anda.</p>
+                    <a href="https://www.figma.com/resource-library/ui-design-principles/" class="btn-box" target="_blank" rel="noopener noreferrer">Baca Selengkapnya</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 6 -->
+            <div class="blog-card reveal">
+                <div class="blog-content">
+                    <h3>Tips Produktivitas untuk Developer</h3>
+                    <p>Tingkatkan efisiensi kerja Anda dengan menerapkan strategi produktivitas yang telah terbukti efektif bagi para developer profesional.</p>
+                    <a href="https://www.actitime.com/developers-time-tracking/developer-productivity-tips" class="btn-box" target="_blank" rel="noopener noreferrer">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Go Top Icon -->
+    <a href="#Blog" class="top"><i class="bx bx-up-arrow-alt"></i></a>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll reveal animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.header');
+                header.classList.toggle('scrolled', window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>

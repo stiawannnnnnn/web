@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Dendi Setiawan</title>
+    <link rel="shortcut icon" type="image/png" href="./img/about.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Tambahan CSS untuk animasi teks */
+        .typing-text {
+            color: #0ef;
+            font-weight: 600;
+            padding-left: 10px;
+            border-right: 2px solid #0ef;
+            animation: blink 0.7s infinite;
+        }
+        .home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 95vh;
+    background-color: #000000;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0px 10% 0;
+    margin-top: 60px;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    letter-spacing: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h4 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    z-index: 10;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.home-content h4 span {
+    color: #0ef;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.home-content h4:nth-of-type(2) {
+    margin-bottom: 30px;
+
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 15px;
+    text-align: center;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #000;
+    box-shadow: 0 0 20px #0ef;
+}
+
+
+        .img {
+    display: inline-block;
+    left: 65%;
+    bottom: 20%;
+    margin-right: 5%;
+    padding: 0;
+    width: 30%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    opacity: 0;
+    animation: slideUP 1s ease forwards;
+    animation-delay: 1s;
+    z-index: 0;
+}
+.responsive {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* Penyesuaian layout home */
+        .home-content h1 {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
+        }
+
+        .img {
+            position: absolute;
+            z-index: 1;
+            filter: drop-shadow(0 0 20px #0ef);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .home-content h4 {
+                font-size: 24px;
+            }
+            
+            .typing-text {
+                display: block;
+                margin-top: 10px;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1" class="active" >Home</a> 
+            <a href="./about.html" style="--i:2">About</a>
+            <a href="./academic.html" style="--i:3">Academic</a>
+            <a href="./experiance.html" style="--i:4">Experience</a>
+            <a href="./skills.html" style="--i:5">Skills</a>
+            <a href="./projects.html" style="--i:6">Projects</a>
+            <a href="./gallery.html" style="--i:7">Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home" id="Home">
+        <div class="home-content">
+            <h3 class="reveal">Hello, I am</h3>
+            <h1 class="reveal">Dendi Setiawan</h1>
+            <h4 class="reveal" style="--i:6">
+                I'm a Informatic Engineering Student<br>
+                passionate in <span class="typing-text"></span>
+            </h4>
+            <div class="img">
+                <img src="./img/about.png" class="responsive" alt="Profile Picture">
+            </div>
+            <div class="home-sci">
+                <a href="https://github.com/" style="--i:8" target="_blank" class="reveal"><i class="bx bxl-github"></i></a>
+                <a href="https://instagram.com/" style="--i:9" target="_blank" class="reveal"><i class="bx bxl-instagram"></i></a>
+            </div>
+            <a href="./about.html" style="--i:11" class="btn-box reveal">Discover More</a>
+        </div>
+    </section>
+
+    <!-- Go Top Icon -->
+    <a href="#Home" class="top"><i class="bx bx-up-arrow-alt"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Inisialisasi Typed.js
+        document.addEventListener('DOMContentLoaded', function() {
+            const typedElement = document.querySelector(".typing-text");
+            if (typedElement) {
+                const typed = new Typed(".typing-text", {
+                    strings: ["Mobile Dev", "Data Analyst", "UI/UX Design", "AI Enthusiast"],
+                    typeSpeed: 80,
+                    backSpeed: 50,
+                    backDelay: 1000,
+                    loop: true,
+                    showCursor: false
+                });
+            }
+
+            // Animasi Scroll Reveal
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                header.classList.toggle('scrolled', window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>

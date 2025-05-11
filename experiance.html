@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/about.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Experience Section Styling */
+        .exp-sec {
+            background: #000000;
+            color: white;
+            padding: 100px 5% 50px;
+            min-height: 100vh;
+        }
+
+        .exp-sec h1 {
+            font-size: 60px;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .exp-sec h1 span {
+            color: #0ef;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .experience-card {
+            background: #1a1d25;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            position: relative;
+            border: 1px solid rgba(0, 238, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 238, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(0, 238, 255, 0.3);
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            background: #0ef;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #0ef;
+        }
+
+        .hed {
+            color: #0ef;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .experience-card h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .experience-card small {
+            display: block;
+            color: #0ef;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .experience-card p {
+            line-height: 1.8;
+            color: #ddd;
+            font-size: 18px;
+        }
+
+        /* Gallery Styling */
+        .gallery {
+            padding: 50px 5%;
+        }
+
+        .gallery h3 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #0ef;
+            letter-spacing: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 238, 255, 0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .exp-sec h1 {
+                font-size: 48px;
+            }
+
+            .experience-card {
+                padding: 25px;
+                margin: 30px 0;
+            }
+
+            .experience-card::before {
+                top: -15px;
+                left: -15px;
+                width: 30px;
+                height: 30px;
+            }
+         
+
+          
+
+        @media (max-width: 480px) {
+            .exp-sec h1 {
+                font-size: 36px;
+            }
+
+            .experience-card h2 {
+                font-size: 24px;
+            }
+
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1">Home</a> 
+            <a href="./about.html" style="--i:2">About</a>
+            <a href="./academic.html" style="--i:3">Academic</a>
+            <a href="./experiance.html" style="--i:4" class="active">Experience</a>
+            <a href="./skills.html" style="--i:5">Skills</a>
+            <a href="./projects.html" style="--i:6">Projects</a>
+            <a href="./gallery.html" style="--i:7">Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Experience Section -->
+    <section id="Experiance" class="exp-sec">
+        <h1>Professional <span>Journey</span></h1>
+        <div class="timeline-container">
+            <div class="experience-card reveal">
+                <div class="text-box">
+                    <h2 class="hed">SWAMITRA INTERNSHIP</h2>
+                    <h2>Data Management Assistant</h2>
+                    <small>January 2022 - April 2022</small>
+                    <p>During my 4-month internship at Koperasi Swamitra, I was responsible for:
+                        <ul class="experience-list">
+                            <li>Mengelola dan memproses data pelanggan menggunakan Microsoft Office Suite</li>
+                            <li>Mengembangkan sistem organisasi data yang efisien</li>
+                            <li>Membuat laporan keuangan yang terperinci</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+    <script>
+        // Scroll Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+                observer.observe(element);
+            });
+
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                header.classList.toggle('scrolled', window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>

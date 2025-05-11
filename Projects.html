@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/about.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Projects Section Styling */
+        .prj {
+            background: #000000;
+            color: white;
+            padding: 100px 5% 50px;
+            min-height: 100vh;
+        }
+
+        .featured-projects-box {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-projects-box h2 {
+            font-size: 60px;
+            letter-spacing: 5px;
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .featured-projects-box h2 span {
+            color: #0ef;
+        }
+
+        .featured-projects-box h2::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #0ef;
+            box-shadow: 0 0 20px #0ef;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project:nth-child(even) .project-image-box {
+            order: -1;
+        }
+
+        .project-details-box {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 238, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .project-details-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 40px rgba(0, 238, 255, 0.2);
+        }
+
+        .project-main-info span {
+            color: #0ef;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .project-main-info h3 {
+            font-size: 32px;
+            margin: 15px 0;
+            background: linear-gradient(45deg, #0ef, #7a63ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-main-info p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .project-tools p {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-tools span {
+            background: rgba(0, 238, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #0ef;
+            border: 1px solid #0ef;
+        }
+
+        .project-icons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .project-icons a {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #0ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-icons a i {
+            color: #0ef;
+            font-size: 24px;
+            transition: color 0.3s ease;
+            z-index: 1;
+        }
+
+        .project-icons a:hover {
+            background: #0ef;
+        }
+
+        .project-icons a:hover i {
+            color: #000;
+        }
+
+        .project-image-box {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .project-image-box:hover {
+            transform: scale(1.03);
+        }
+
+        .project-img-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            filter: grayscale(30%);
+            transition: filter 0.3s ease;
+        }
+
+        .project-image-box:hover img {
+            filter: grayscale(0);
+        }
+
+        @media (max-width: 992px) {
+            .project {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .project:nth-child(even) .project-image-box {
+                order: 0;
+            }
+            
+            .featured-projects-box h2 {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .featured-projects-box h2 {
+                font-size: 36px;
+            }
+            
+            .project-main-info h3 {
+                font-size: 28px;
+            }
+            
+            .project-main-info p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .featured-projects-box h2 {
+                font-size: 32px;
+            }
+            
+            .project-details-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1">Home</a> 
+            <a href="./about.html" style="--i:2">About</a>
+            <a href="./academic.html" style="--i:3">Academic</a>
+            <a href="./experiance.html" style="--i:4">Experience</a>
+            <a href="./skills.html" style="--i:5">Skills</a>
+            <a href="./projects.html" style="--i:6" class="active">Projects</a>
+            <a href="./gallery.html" style="--i:7">Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="Projects" class="prj">
+        <div class="featured-projects-box">
+            <h2>Featured <span>Projects</span></h2>
+            
+            <!-- Project 1 -->
+            <div class="project reveal">
+                <div class="project-details-box">
+                    <div class="project-main-info">
+                        <span>Featured Project</span>
+                        <h3>Al-Quran Mobile App</h3>
+                        <p>sebuah Aplikasi android modern yang dibangun menggunakan bahasa pemrograman Kotlin dan Jetpack compose</p>
+                        <div class="project-tools">
+                            <p>
+                                <span>Kotlin</span>
+                                <span>Jetpack Compose</span>
+                     
+                            </p>
+                        </div>
+                        <div class="project-icons">
+                            <a href="https://github.com" target="_blank"><i class='bx bxl-github'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-image-box">
+                    <a href="https://demo.com" target="_blank" class="project-img-link">
+                        <img src="./img/project1.jpg" alt="Project 1">
+                    </a>
+                </div>
+            </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                header.classList.toggle('scrolled', window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>

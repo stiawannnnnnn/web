@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/about.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+      
+
+        /* About Section */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 2rem;
+            min-height: 100vh;
+            padding: 120px 5% 50px;
+        }
+
+        .about-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-img img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            text-align: left;
+        }
+
+        .about-text h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .about-text span {
+            color: #00d9ff;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .abtbtn-box {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00d9ff;
+            color: #000;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .abtbtn-box:hover {
+            background-color: #00b3cc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 100px 5% 40px;
+            }
+
+            .about-text, .about-img {
+                text-align: center;
+            }
+
+            .about-text p {
+                text-align: left;
+            }
+
+            .about-img img {
+                max-width: 250px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                display: none;
+                flex-direction: column;
+                background: #111;
+                position: absolute;
+                top: 60px;
+                right: 5%;
+                width: 200px;
+                padding: 10px 0;
+            }
+
+            .menu-toggle:checked + .menu-icon + .navbar {
+                display: flex;
+            }
+        }
+
+        /* Scroll animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00d9ff;
+            color: #000;
+            padding: 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1" >Home</a> 
+            <a href="./about.html" style="--i:2" class="active">About</a>
+            <a href="./academic.html" style="--i:3">Academic</a>
+            <a href="./experiance.html" style="--i:4">Experience</a>
+            <a href="./skills.html" style="--i:5">Skills</a>
+            <a href="./projects.html" style="--i:6">Projects</a>
+            <a href="./gallery.html" style="--i:7" >Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="About">
+        <div class="about reveal">
+            <div class="about-img">
+                <img src="./img/avathar.png" alt="Profile Picture">
+            </div>
+            <div class="about-text reveal">
+                <h2>About <span>Me</span></h2>
+                <p>Saya adalah seorang Mahasiswa jurusan Teknik Informatika yang memiliki ketertarikan dan fokus pada bidang pengembangan aplikasi mobile, khususnya menggunakan Kotlin dan Jetpack Compose untuk platform Android. Saya aktif mempelajari praktik terbaik dalam desain antarmuka pengguna (UI/UX), pengelolaan data menggunakan Room Database, serta integrasi API untuk menghadirkan aplikasi yang fungsional dan efisien.</p>
+                <p>Selain itu, saya juga mulai mendalami bidang kecerdasan buatan, khususnya pada penerapan machine learning untuk aplikasi mobile, seperti pengenalan suara dan gambar. Saya percaya bahwa kombinasi antara mobile development dan AI akan menjadi kunci dalam menciptakan solusi digital yang inovatif dan bermanfaat. Dengan semangat belajar yang tinggi dan minat dalam membangun solusi digital, saya terus mengembangkan keterampilan melalui proyek pribadi, kursus online, dan kolaborasi tim.</p>
+                <a href="./academic.html" class="abtbtn-box">Discover Academics</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Go Top Icon -->
+    <a href="#About" class="top"><i class="bx bx-up-arrow-alt"></i></a>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll reveal animation
+        document.addEventListener('DOMContentLoaded', function () {
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach((element) => {
+                observer.observe(element);
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function () {
+                const header = document.querySelector('.header');
+                header.classList.toggle('scrolled', window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>

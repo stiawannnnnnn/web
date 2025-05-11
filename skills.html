@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="./img/about.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Skills Section Styling */
+        #Skills {
+            background: #000000;
+            color: white;
+            padding: 100px 5% 50px;
+            min-height: 100vh;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 60px;
+            letter-spacing: 5px;
+            margin-bottom: 50px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .subtitle.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .subtitle span {
+            color: #0ef;
+            position: relative;
+        }
+
+        .subtitle span::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #0ef, transparent);
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .skill-box {
+            background: #1a1d25;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid rgba(0, 238, 255, 0.1);
+        }
+
+        .skill-box.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 238, 255, 0.2);
+            border-color: #0ef;
+        }
+
+        .skill-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, #0ef, transparent);
+            animation: skillGlow 4s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes skillGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .skill-box img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 0 5px #0ef);
+        }
+
+        .skill-box:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .skill-box p {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0ef;
+            letter-spacing: 1px;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .subtitle {
+                font-size: 48px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .skill-box img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .skill-box p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .subtitle {
+                font-size: 36px;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1">Home</a> 
+            <a href="./about.html" style="--i:2">About</a>
+            <a href="./academic.html" style="--i:3">Academic</a>
+            <a href="./experiance.html" style="--i:4">Experience</a>
+            <a href="./skills.html" style="--i:5"  class="active" >Skills</a>
+            <a href="./projects.html" style="--i:6">Projects</a>
+            <a href="./gallery.html" style="--i:7">Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Skills Section -->
+    <section id="Skills">
+        <h2 class="subtitle reveal">My <span>Skills</span></h2>
+        <div class="skills-container">
+            <!-- Skill Items -->
+            <div class="skill-box reveal"><img src="./img/logos/html-5.png" alt="HTML"><p>HTML</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/css-3.png" alt="CSS"><p>CSS</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/js.png" alt="JavaScript"><p>JavaScript</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/java.png" alt="Java"><p>Java</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/kotlin.png" alt="Kotlin"><p>Kotlin</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/figma.png" alt="Figma"><p>Figma</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/git.png" alt="Git"><p>Git</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/github.png" alt="GitHub"><p>GitHub</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/vscode.png" alt="VSCode"><p>VS Code</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/mspowerpoint.png" alt="Powerpoint"><p>Powerpoint</p></div>
+            <div class="skill-box reveal"><img src="./img/logos/Canva.png" alt="Canva"><p>Canva</p></div>
+        </div>
+    </section>
+
+    <!-- Go Top Icon -->
+    <a href="#Skills" class="top"><i class="bx bx-up-arrow-alt"></i></a>
+
+    <script>
+        // Scroll Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                observer.observe(element);
+            });
+
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('.header');
+                header.classList.toggle('scrolled', window.scrollY > 0);
+            });
+        });
+    </script>
+</body>
+</html>

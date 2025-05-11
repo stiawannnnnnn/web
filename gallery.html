@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Activities Gallery</title>
+
+    <!-- External CSS & Fonts -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <style>
+
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: #0ef;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #0ef;
+            box-shadow: 0 0 15px #0ef;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            background: #1a1a1a;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 238, 255, 0.3);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid #0ef;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+
+        .gallery-content {
+            padding: 20px;
+        }
+
+        .gallery-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #0ef;
+        }
+
+        .gallery-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="header" id="header">
+        <a class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="bx bx-menu"></i></label>
+        <nav class="navbar" id="myLinks">
+            <a href="./index.html" style="--i:1">Home</a> 
+            <a href="./about.html" style="--i:2">About</a>
+            <a href="./academic.html" style="--i:3">Academic</a>
+            <a href="./experiance.html" style="--i:4">Experience</a>
+            <a href="./skills.html" style="--i:5">Skills</a>
+            <a href="./projects.html" style="--i:6">Projects</a>
+            <a href="./gallery.html" style="--i:7" class="active">Documentation</a>
+            <a href="./hobby.html" style="--i:8">Hobby</a>
+            <a href="./blog.html" style="--i:9">Blog</a>
+            <a href="./contact.html" style="--i:10">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="gallery-container"><br><br><br><br>
+        <h2 class="section-title">My Activities</h2>
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item">
+               <img src="./img/activity1.jpg" alt="activity 1" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">KURMATIF KE -IX</h3>
+                    <p class="gallery-description">
+                        Berpartisipasi dalam acara kurmatif yang diselenggarakan oleh himpunan Mahasiswa TIF UIN SUSKA RIAU.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="./img/activity2.jpg" alt="activity 2" class="gallery-image">
+                <div class="gallery-content">
+                    <h3 class="gallery-title">PBAK FAKULTAS TIF 23</h3>
+                    <p class="gallery-description">
+                        Berpartisipasi dalam acara PBAK FAKULTAS tahun 2023.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
